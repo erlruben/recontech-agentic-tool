@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recontech Agentic Tool: Claude Code terminals with a shared brain</title>
+<meta name="description" content="A free desktop app that puts your Claude Code terminals side by side and gives them a shared local memory built from your past sessions.">
+<style>
+  :root { --bg:#0f1318; --panel:#171d25; --text:#e6eaf0; --dim:#9aa5b5; --line:#2b3442; --accent:#6ea0ff; --green:#3ad193; --amber:#f0b354; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#f7f8fa; --panel:#ffffff; --text:#18202b; --dim:#5b6676; --line:#dde2e9; --accent:#2f6fed; --green:#12885a; --amber:#a86a09; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  a { color:var(--accent); }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 20px; }
+  header { padding:20px 0; display:flex; flex-wrap:wrap; align-items:center; gap:8px 16px; }
+  header strong { font-size:18px; }
+  header nav { margin-left:auto; display:flex; flex-wrap:wrap; gap:6px 18px; font-size:15px; }
+  @media (max-width: 560px) { header nav { margin-left:0; width:100%; } .button { width:100%; text-align:center; } }
+  header nav a { color:var(--dim); text-decoration:none; }
+  header nav a:hover { color:var(--text); }
+  .hero { padding:48px 0 32px; }
+  h1 { font-size:clamp(30px, 5vw, 48px); line-height:1.15; margin:0 0 16px; letter-spacing:-0.02em; text-wrap:balance; }
+  .lead { font-size:19px; color:var(--dim); max-width:680px; margin:0 0 28px; }
+  .actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+  .button { display:inline-block; padding:12px 22px; border-radius:8px; text-decoration:none; font-weight:600; border:1px solid var(--line); color:var(--text); }
+  .button.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .small { font-size:14px; color:var(--dim); margin-top:12px; }
+  .shot { margin:36px 0 8px; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#000; }
+  .shot img { display:block; width:100%; height:auto; }
+  h2 { font-size:26px; margin:56px 0 8px; letter-spacing:-0.01em; }
+  .sub { color:var(--dim); margin:0 0 24px; max-width:700px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 20px; }
+  .card h3 { margin:0 0 6px; font-size:17px; }
+  .card p { margin:0; color:var(--dim); font-size:15px; }
+  ol.steps { padding-left:22px; max-width:720px; }
+  ol.steps li { margin-bottom:10px; }
+  .note { border-left:3px solid var(--amber); padding:10px 16px; background:var(--panel); border-radius:0 8px 8px 0; max-width:760px; }
+  code { background:var(--panel); border:1px solid var(--line); border-radius:4px; padding:1px 6px; font-size:14px; }
+  footer { margin:64px 0 0; padding:24px 0 40px; border-top:1px solid var(--line); color:var(--dim); font-size:14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <strong>Recontech Agentic Tool</strong>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#start">Get started</a>
+      <a href="#privacy">Privacy</a>
+      <a href="https://github.com/erlruben/recontech-agentic-tool">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>One window for your Claude Code work, with a memory that never forgets.</h1>
+    <p class="lead">Run your Claude Code terminals side by side and connect them to a shared local brain, built from your past sessions and the notes Claude saves as it works. Every new session picks up where the last one left off.</p>
+    <div class="actions">
+      <a class="button primary" href="https://github.com/erlruben/recontech-agentic-tool/releases/latest/download/RecontechAgenticTool-Setup.exe">Download for Windows</a>
+      <a class="button" href="https://github.com/erlruben/recontech-agentic-tool/releases">All releases</a>
+    </div>
+    <p class="small">Free for Windows. Requires <a href="https://docs.claude.com/en/docs/claude-code">Claude Code</a>.</p>
+    <div class="shot"><img src="screenshot.png" alt="The app window: three Claude Code terminals on the left and a network graph of projects, sessions and notes on the right" width="1484" height="861"></div>
+    <p class="small">The screenshot uses made-up demo projects.</p>
+  </section>
+
+  <section id="features">
+    <h2>What it does</h2>
+    <p class="sub">Claude Code starts every session from zero. This app keeps what you learned yesterday within reach today.</p>
+    <div class="grid">
+      <div class="card"><h3>Terminals side by side</h3><p>Up to six Claude Code terminals in a grid or tabs, each with its own sign-in, for example personal and work.</p></div>
+      <div class="card"><h3>A shared brain</h3><p>Every terminal reads and writes one local memory. A fact one session learns, the next session knows.</p></div>
+      <div class="card"><h3>Past sessions become memory</h3><p>The brain keeps each session's title, project, prompts and topics, and shows them as a live graph you can search.</p></div>
+      <div class="card"><h3>Terminals that work together</h3><p>Give them roles such as Manager, Builder, Reviewer and Tester, or make your own. They can read each other and hand work back and forth.</p></div>
+      <div class="card"><h3>Hey Recon</h3><p>Say "Hey Recon" and a request, and it goes to your Manager terminal. Speech is recognised on your computer.</p></div>
+      <div class="card"><h3>See your token usage</h3><p>Tokens used this week, month, year and in total, and under each terminal its own week, session and limit state.</p></div>
+      <div class="card"><h3>Unfinished work, found for you</h3><p>An optional local model labels each session and lists what was left unfinished, with one click to resume.</p></div>
+      <div class="card"><h3>Kits for web, mobile and games</h3><p>The app recognises website, mobile, Unity and Godot projects and tells Claude how to work in each.</p></div>
+      <div class="card"><h3>Team memory</h3><p>Write a project's notes to a file in its repository. Teammates who open the project are offered them.</p></div>
+      <div class="card"><h3>Keep going past a limit</h3><p>A free-models terminal runs on your own free API keys, kept in a container so it only sees what you hand it.</p></div>
+      <div class="card"><h3>Works offline</h3><p>An Ollama profile runs Claude Code on a model on your own computer, with the same brain.</p></div>
+    </div>
+  </section>
+
+  <section id="start">
+    <h2>Get started</h2>
+    <ol class="steps">
+      <li>Install <a href="https://docs.claude.com/en/docs/claude-code">Claude Code</a> if you do not have it.</li>
+      <li><a href="https://github.com/erlruben/recontech-agentic-tool/releases/latest/download/RecontechAgenticTool-Setup.exe">Download the installer</a> and run it. It installs for your user only.</li>
+      <li>Open the app and choose your project folder. The first terminal starts Claude Code with your normal sign-in.</li>
+      <li>Work as usual. Ask Claude what it remembers about the project, or tell it to remember a decision.</li>
+    </ol>
+    <p class="note">Windows may show "Windows protected your PC" because the app is new and not code-signed. Click <b>More info</b>, then <b>Run anyway</b>.</p>
+  </section>
+
+  <section id="privacy">
+    <h2>Private by design</h2>
+    <p class="sub">The app has no server and no account. Your sessions, notes, settings and keys exist only on your computer, and nothing is sent to the authors or to other users.</p>
+    <div class="grid">
+      <div class="card"><h3>Local memory</h3><p>The brain is plain files in your user folder. Secrets such as API keys are masked before anything is stored.</p></div>
+      <div class="card"><h3>Your sign-in stays with Claude Code</h3><p>The app never reads or stores your Claude login. Claude Code handles it, as usual.</p></div>
+      <div class="card"><h3>You choose what an AI sees</h3><p>Whatever a terminal works on goes to that terminal's AI provider. The free-models terminal is contained by default, and Ollama keeps everything on your machine.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    Recontech Agentic Tool is made by Recontech. <a href="https://github.com/erlruben/recontech-agentic-tool/releases">Releases on GitHub</a>. Claude and Claude Code are products of Anthropic; this project is independent and not affiliated with Anthropic.
+  </footer>
+</div>
+</body>
+</html>
